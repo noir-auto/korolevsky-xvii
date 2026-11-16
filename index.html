@@ -1,0 +1,559 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090909">
+<title>КОРОЛЕВСКИЙ XVII — ARCHIVE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+ --bg:#080808;--panel:#101010;--panel2:#151212;
+ --white:#eeeae8;--muted:#777170;--red:#651b28;
+ --red2:#9b3545;--line:#292323;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;background:var(--bg);color:var(--white);
+ font-family:Manrope,sans-serif;overflow-x:hidden;
+}
+body:after{
+ content:"";position:fixed;inset:0;pointer-events:none;z-index:20;
+ opacity:.08;
+ background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.3'/%3E%3C/svg%3E");
+}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+button{color:inherit}
+::selection{background:#762735;color:white}
+header{
+ position:fixed;top:0;left:0;width:100%;height:76px;
+ display:flex;align-items:center;justify-content:space-between;
+ padding:0 7%;z-index:30;background:#080808bd;
+ border-bottom:1px solid #ffffff0b;backdrop-filter:blur(18px);
+}
+.logo{font:800 12px Unbounded;letter-spacing:2px}
+.logo span{color:#8e3947}
+nav{display:flex;gap:30px}
+nav a{font-size:9px;letter-spacing:2px;color:#aaa;transition:.3s}
+nav a:hover{color:white}
+.menu-btn{display:none;background:none;border:0;font-size:23px}
+.hero{
+ min-height:850px;height:100vh;max-height:1100px;
+ display:flex;align-items:center;padding:120px 9%;
+ position:relative;overflow:hidden;
+ background:
+ radial-gradient(ellipse at 75% 50%,#44131d50,transparent 34%),
+ radial-gradient(ellipse at 50% 100%,#1c0c10,transparent 55%),
+ linear-gradient(115deg,#080808 35%,#10090b);
+}
+.hero:before{
+ content:"XVII";position:absolute;right:-5%;top:8%;
+ font:900 clamp(230px,40vw,600px) Unbounded;
+ color:#ffffff05;line-height:1;
+}
+.hero:after{
+ content:"";position:absolute;width:500px;height:500px;
+ border:1px solid #a24a5730;border-radius:50%;
+ right:10%;top:20%;box-shadow:0 0 100px #651b2820,inset 0 0 80px #651b2820;
+}
+.hero-content{position:relative;z-index:2;max-width:850px}
+.eyebrow{font-size:9px;letter-spacing:6px;color:#a34a59;margin-bottom:30px}
+h1{
+ font:900 clamp(48px,9vw,120px)/1.03 Unbounded;
+ letter-spacing:-7px;margin:0;
+}
+h1 span{color:#702532}
+.hero-sub{color:#8b8583;font-size:12px;letter-spacing:4px;margin:32px 0 42px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+ display:inline-flex;align-items:center;justify-content:center;gap:10px;
+ padding:16px 23px;background:#681e2b;border:1px solid #79303e;
+ font-size:9px;font-weight:800;letter-spacing:2px;
+ transition:.3s;cursor:pointer;
+}
+.btn:hover{background:#8b2b3c;transform:translateY(-3px);box-shadow:0 10px 40px #651b2830}
+.btn.ghost{background:transparent;border-color:#393031}
+.btn.ghost:hover{border-color:#8c3b4a}
+.hero-index{
+ position:absolute;bottom:35px;left:9%;font-size:9px;
+ letter-spacing:4px;color:#716a69;
+}
+.hero-side{
+ position:absolute;right:8%;bottom:60px;z-index:2;
+ writing-mode:vertical-rl;color:#756d6c;font-size:9px;letter-spacing:4px;
+}
+section{padding:110px 9%;position:relative}
+.section-head{
+ display:flex;justify-content:space-between;align-items:end;
+ gap:25px;margin-bottom:45px;
+}
+.kicker{font-size:9px;letter-spacing:4px;color:#a04a58;margin-bottom:15px}
+h2{font:800 clamp(27px,4vw,48px)/1.15 Unbounded;letter-spacing:-2px;margin:0}
+.section-note{font-size:10px;color:#777;line-height:1.9;max-width:260px}
+.artist{
+ background:linear-gradient(120deg,#100c0d,#090909 70%);
+ border-top:1px solid #24191b;border-bottom:1px solid #24191b;
+}
+.artist-grid{
+ display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center;
+}
+.portrait{
+ min-height:520px;position:relative;overflow:hidden;
+ background:
+ radial-gradient(ellipse at 50% 38%,#48232a 0%,#1b1012 36%,transparent 70%),
+ linear-gradient(145deg,#171113,#080808);
+ border:1px solid #39272b;display:flex;align-items:center;justify-content:center;
+}
+.portrait:before,.portrait:after{
+ content:"";position:absolute;width:70%;height:70%;
+ border:1px solid #a45b6640;transform:rotate(45deg);
+}
+.portrait:after{width:50%;height:50%;border-color:#a45b662b}
+.portrait-mark{
+ position:relative;z-index:2;text-align:center;
+ font:900 clamp(55px,9vw,110px) Unbounded;color:#eee5e2;
+ text-shadow:0 0 70px #a33b4d55;
+}
+.portrait-mark small{
+ display:block;font:700 9px Manrope;letter-spacing:6px;
+ color:#a77a80;margin-top:18px;
+}
+.portrait-caption{
+ position:absolute;bottom:18px;left:20px;z-index:3;
+ font-size:8px;letter-spacing:2px;color:#8e8181;
+}
+.artist-copy h3{font:800 clamp(25px,4vw,43px) Unbounded;line-height:1.25;margin:0 0 25px}
+.artist-copy p{font-size:13px;line-height:2.1;color:#999}
+.artist-facts{display:flex;gap:35px;margin-top:35px;flex-wrap:wrap}
+.fact b{font:800 25px Unbounded;color:#d6c9c8}
+.fact span{display:block;color:#777;font-size:9px;letter-spacing:2px;margin-top:8px}
+.album-feature{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.album-embed{
+ min-height:430px;background:#111;border:1px solid #302326;
+ display:flex;align-items:center;justify-content:center;overflow:hidden;
+}
+.album-embed iframe{width:100%;height:450px;border:0}
+.album-description h3{font:800 clamp(27px,4vw,48px) Unbounded;line-height:1.2;margin:0 0 20px}
+.album-description p{font-size:13px;line-height:2;color:#999}
+.meta{display:flex;gap:25px;margin:28px 0;color:#807778;font-size:9px;letter-spacing:2px}
+.track-controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:25px}
+.filter{
+ padding:11px 16px;background:transparent;border:1px solid #34282b;
+ font-size:9px;letter-spacing:1px;color:#999;cursor:pointer;transition:.2s;
+}
+.filter.active,.filter:hover{background:#651b28;border-color:#651b28;color:white}
+.search{
+ width:100%;padding:15px 17px;margin-bottom:20px;
+ background:#111;border:1px solid #302629;color:white;outline:none;
+}
+.search:focus{border-color:#80404b}
+.track-list{border-top:1px solid var(--line)}
+.track{
+ display:grid;grid-template-columns:42px 1fr 110px 45px;
+ align-items:center;gap:15px;padding:17px 10px;
+ border-bottom:1px solid var(--line);transition:.25s;
+}
+.track:hover{background:#ffffff07;padding-left:17px}
+.track-num{font-size:10px;color:#675e5e}
+.track-name{font-size:13px;font-weight:800}
+.track-album{font-size:9px;color:#777;margin-top:5px}
+.track-plays{text-align:right;font-size:9px;color:#777}
+.track-open{
+ border:1px solid #493137;background:transparent;
+ width:34px;height:34px;border-radius:50%;cursor:pointer;transition:.2s;
+}
+.track-open:hover{background:#762735}
+.releases{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.release{
+ background:#101010;border:1px solid #2a2223;padding:13px;
+ transition:.35s;cursor:pointer;
+}
+.release:hover{transform:translateY(-7px);border-color:#74313d;box-shadow:0 15px 40px #0008}
+.release-art{
+ aspect-ratio:1;display:flex;align-items:center;justify-content:center;
+ text-align:center;padding:20px;position:relative;overflow:hidden;
+ background:radial-gradient(circle at 50% 40%,#4c1c26,#1a0d10 60%,#090909);
+}
+.release-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s,opacity .35s;}
+.release:hover .release-art img{transform:scale(1.06)}
+.release-art.has-cover:before{display:none}
+.release-art.has-cover span{display:none}
+.release-art span{z-index:1;font:800 16px Unbounded;line-height:1.5}
+.release-art:before{content:"";position:absolute;width:65%;height:65%;border:1px solid #a35a6744;transform:rotate(45deg)}
+.release-art span{z-index:1;font:800 16px Unbounded;line-height:1.5}
+.release h3{font-size:12px;margin:15px 0 6px}
+.release p{font-size:9px;color:#777;margin:0}
+.release small{display:block;color:#8e424f;font-size:8px;letter-spacing:2px;margin-top:12px}
+.quote-section{
+ background:linear-gradient(100deg,#160d10,#0b0909);
+ border-top:1px solid #2b1a1e;border-bottom:1px solid #2b1a1e;
+}
+.quote{
+ max-width:900px;font:800 clamp(23px,4.5vw,55px)/1.5 Unbounded;
+ letter-spacing:-2px;color:#ddd3d2;
+}
+.quote span{color:#78303d}
+.platforms{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.platform{
+ display:block;padding:25px;background:#101010;border:1px solid #302628;
+ transition:.25s;
+}
+.platform:hover{border-color:#853b49;transform:translateY(-4px)}
+.platform b{font:800 13px Unbounded}
+.platform p{font-size:10px;color:#777;line-height:1.8}
+footer{
+ padding:45px 9%;border-top:1px solid #292323;
+ display:flex;justify-content:space-between;gap:20px;
+ color:#777;font-size:9px;letter-spacing:2px;
+}
+footer b{font:800 11px Unbounded;color:#ddd}
+.player{
+ position:fixed;bottom:0;left:0;width:100%;z-index:40;
+ display:flex;align-items:center;gap:20px;padding:13px 7%;
+ background:#100d0ef0;border-top:1px solid #3c262b;backdrop-filter:blur(20px);
+}
+.player-info{min-width:170px}
+.player-info b{font-size:11px}
+.player-info small{display:block;font-size:9px;color:#777;margin-top:4px}
+.player-button{
+ width:38px;height:38px;border-radius:50%;border:0;
+ background:#762536;cursor:pointer;font-size:14px;
+}
+.player-progress{height:2px;background:#3b292d;flex:1}
+.player-label{font-size:8px;color:#777;letter-spacing:2px}
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .8s,transform .8s}
+.reveal.visible{opacity:1;transform:none}
+.notice{font-size:9px;color:#70696a;line-height:1.8;margin-top:20px}
+@media(max-width:760px){
+ header{height:65px;padding:0 5%}
+ nav{display:none;position:absolute;top:65px;left:0;width:100%;padding:25px;background:#0c0a0b;flex-direction:column;gap:22px}
+ nav.open{display:flex}
+ .menu-btn{display:block}
+ .hero{min-height:750px;padding:110px 6%}
+ h1{letter-spacing:-3px}
+ section{padding:75px 6%}
+ .artist-grid,.album-feature{grid-template-columns:1fr;gap:30px}
+ .portrait{min-height:390px}
+ .releases{grid-template-columns:repeat(2,1fr);gap:10px}
+ .release{padding:9px}
+ .track{grid-template-columns:25px 1fr 35px;gap:8px}
+ .track-plays{display:none}
+ .platforms{grid-template-columns:1fr}
+ .section-head{align-items:start;flex-direction:column}
+ .player{padding:10px 5%;gap:12px}
+ .player-info{flex:1;min-width:0}
+ .player-progress,.player-label{display:none}
+ footer{padding:35px 6%;flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*:before,*:after{scroll-behavior:auto!important;transition:none!important}
+ .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+ <a class="logo" href="#home">KOROLEVSKY <span>XVII</span></a>
+ <nav id="nav">
+  <a href="#artist">АРТИСТ</a>
+  <a href="#album">АЛЬБОМ</a>
+  <a href="#music">МУЗЫКА</a>
+  <a href="#releases">РЕЛИЗЫ</a>
+ </nav>
+ <button class="menu-btn" id="menuBtn" aria-label="Открыть меню">☰</button>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="hero-content">
+  <div class="eyebrow">INDEPENDENT ARTIST · 2023—2026</div>
+  <h1>КОРОЛЕВСКИЙ<br><span>XVII</span></h1>
+  <div class="hero-sub">A DIFFERENT STATE OF MIND.</div>
+  <div class="actions">
+   <a class="btn" href="#music">ОТКРЫТЬ ДИСКОГРАФИЮ ↗</a>
+   <a class="btn ghost" href="#artist">ИССЛЕДОВАТЬ</a>
+  </div>
+ </div>
+ <div class="hero-index">OFFICIAL MUSIC ARCHIVE / MMXXVI</div>
+ <div class="hero-side">NOTHING LASTS FOREVER</div>
+</section>
+
+<section class="artist" id="artist">
+ <div class="section-head reveal">
+  <div><div class="kicker">01 / THE ARTIST</div><h2>ЗА ИМЕНЕМ</h2></div>
+  <div class="section-note">От первых записей до собственного звучания.</div>
+ </div>
+ <div class="artist-grid reveal">
+  <div class="portrait">
+   <div class="portrait-mark">XVII<small>КОРОЛЕВСКИЙ</small></div>
+   <div class="portrait-caption">ARTIST PROFILE · PORTRAIT NOT EMBEDDED</div>
+  </div>
+  <div class="artist-copy">
+   <div class="kicker">MUSIC / IDENTITY / ARCHIVE</div>
+   <h3>КОРОЛЕВСКИЙ XVII</h3>
+   <p>Королевский XVII — российский рэп-исполнитель, чья музыкальная история прослеживается как минимум с 2023 года.</p>
+   <p>Ранее артист выпускал музыку под именем internetdoublex. Позже сформировался проект Королевский XVII, с собственным каталогом сольных релизов и совместных работ.</p>
+   <p>В его дискографии встречаются плотное электронное звучание, тяжёлые басы и более меланхоличные композиции. В сентябре 2026 года вышел дебютный альбом CRISIS MANAGEMENT.</p>
+   <div class="artist-facts">
+    <div class="fact"><b>2023</b><span>ПЕРВЫЕ РЕЛИЗЫ</span></div>
+    <div class="fact"><b>2026</b><span>DEBUT ALBUM</span></div>
+    <div class="fact"><b>XVII</b><span>IDENTITY</span></div>
+   </div>
+   <p><a class="btn ghost" href="https://podshar.com/artist/korolevskii-xvii" target="_blank" rel="noopener">ПРОФИЛЬ И ФОТО ↗</a></p>
+  </div>
+ </div>
+ <p class="notice">Портрет артиста пока не встроен: доступный источник ведёт на страницу профиля, а не на проверенный прямой файл фотографии. Здесь не используется случайное или сгенерированное лицо вместо оригинального.</p>
+</section>
+
+<section id="album">
+ <div class="section-head reveal">
+  <div><div class="kicker">02 / FEATURED RELEASE</div><h2>CRISIS MANAGEMENT</h2></div>
+  <div class="section-note">25 SEPTEMBER 2026<br>10 TRACKS · TRV</div>
+ </div>
+ <div class="album-feature reveal">
+  <div class="album-embed">
+   <iframe title="CRISIS MANAGEMENT — Apple Music"
+    src="https://embed.music.apple.com/us/album/crisis-management/6814947083"
+    allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation">
+   </iframe>
+  </div>
+  <div class="album-description">
+   <div class="kicker">DEBUT STUDIO ALBUM</div>
+   <h3>CRISIS<br>MANAGEMENT</h3>
+   <p>Десять композиций, собранных в одну работу. От тяжёлого электронного звучания и плотных басов до более спокойного финала.</p>
+   <p>Релиз вышел 25 сентября 2026 года на лейбле TRV. Официальная обложка и музыкальный каталог загружаются через встроенную страницу Apple Music.</p>
+   <div class="meta"><span>2026</span><span>10 TRACKS</span><span>18:02</span></div>
+   <a class="btn" href="https://music.apple.com/us/album/crisis-management/6814947083" target="_blank" rel="noopener">ОТКРЫТЬ АЛЬБОМ ↗</a>
+  </div>
+ </div>
+</section>
+
+<section id="music">
+ <div class="section-head reveal">
+  <div><div class="kicker">03 / DISCOGRAPHY</div><h2>МУЗЫКА</h2></div>
+  <div class="section-note">Поиск по каталогу. Нажми на композицию, чтобы перейти к официальному прослушиванию.</div>
+ </div>
+ <input class="search" id="search" placeholder="НАЙТИ КОМПОЗИЦИЮ..." autocomplete="off">
+ <div class="track-controls">
+  <button class="filter active" data-filter="all">ВСЁ</button>
+  <button class="filter" data-filter="album">CRISIS MANAGEMENT</button>
+  <button class="filter" data-filter="single">СИНГЛЫ</button>
+ </div>
+ <div class="track-list" id="trackList"></div>
+ <p class="notice">Прослушивания отдельных треков не отображаются: надёжные открытые счётчики по каждой композиции не подтверждены. Никаких выдуманных чисел.</p>
+</section>
+
+<section id="releases">
+ <div class="section-head reveal">
+  <div><div class="kicker">04 / RELEASE ARCHIVE</div><h2>РЕЛИЗЫ</h2></div>
+  <div class="section-note">Хронология опубликованной дискографии.</div>
+ </div>
+ <div class="releases reveal" id="releaseGrid"></div>
+</section>
+
+<section class="quote-section">
+ <div class="kicker">05 / THE SOUND</div>
+ <div class="quote reveal">МУЗЫКА НЕ ОБЯЗАНА БЫТЬ <span>УДОБНОЙ.</span></div>
+ <p class="notice">AN INDEPENDENT MUSIC ARCHIVE · KOROLEVSKY XVII</p>
+</section>
+
+<section id="links">
+ <div class="section-head reveal">
+  <div><div class="kicker">06 / OFFICIAL SOURCES</div><h2>СЛУШАТЬ</h2></div>
+ </div>
+ <div class="platforms reveal">
+  <a class="platform" href="https://zvuk.com/artist/212650075" target="_blank" rel="noopener">
+   <b>ЗВУК ↗</b><p>Каталог и композиции исполнителя.</p>
+  </a>
+  <a class="platform" href="https://music.apple.com/us/album/crisis-management/6814947083" target="_blank" rel="noopener">
+   <b>APPLE MUSIC ↗</b><p>Официальная страница альбома.</p>
+  </a>
+  <a class="platform" href="https://music.mts.ru/artist/19984589/albums" target="_blank" rel="noopener">
+   <b>МТС МУЗЫКА ↗</b><p>Дискография исполнителя.</p>
+  </a>
+ </div>
+</section>
+</main>
+
+<footer>
+ <b>KOROLEVSKY XVII</b>
+ <span>UNOFFICIAL FAN ARCHIVE · 2026</span>
+ <span>NOT AFFILIATED WITH THE ARTIST</span>
+</footer>
+
+<div class="player">
+ <div class="player-info">
+  <b id="playerTitle">KOROLEVSKY XVII</b>
+  <small id="playerSub">Выбери трек в каталоге</small>
+ </div>
+ <button class="player-button" id="playerButton" aria-label="Открыть музыку">↗</button>
+ <div class="player-progress"></div>
+ <span class="player-label">OFFICIAL STREAM</span>
+</div>
+
+<script>
+const albumUrl="https://music.apple.com/us/album/crisis-management/6814947083";
+const artistUrl="https://zvuk.com/artist/212650075/tracks";
+
+const tracks=[
+ ["crisis management","CRISIS MANAGEMENT","2026","album"],
+ ["growth correction","CRISIS MANAGEMENT","2026","album"],
+ ["leverage 100x","CRISIS MANAGEMENT","2026","album"],
+ ["de facto","CRISIS MANAGEMENT","2026","album"],
+ ["de jure","CRISIS MANAGEMENT","2026","album"],
+ ["market deathmatch","CRISIS MANAGEMENT","2026","album"],
+ ["sv moscow (remake)","CRISIS MANAGEMENT","2026","album"],
+ ["sub rosa","CRISIS MANAGEMENT","2026","album"],
+ ["vivre sa vie","CRISIS MANAGEMENT","2026","album"],
+ ["charles de gaulle","CRISIS MANAGEMENT","2026","album"],
+ ["sv moscow","sv moscow","2025","single"],
+ ["Lee McQueen","Lee McQueen","2025","single"],
+ ["родной дом","родной дом","2025","single"],
+ ["грустные губы","грустные губы","2024","single"],
+ ["1,5","1,5","2024","single"],
+ ["подиум","подиум","2024","single"],
+ ["sad amber perfume","sad amber perfume","2024","single"],
+ ["sadisfaction","sadisfaction","2024","single"],
+ ["high iq money","high iq money","2023","single"],
+ ["слезы сатоши","слезы сатоши","2023","single"]
+];
+
+const releases=[
+ ["CRISIS MANAGEMENT","2026","10 TRACKS","album"],
+ ["sv moscow","2025","SINGLE","single"],
+ ["Lee McQueen","2025","SINGLE","single"],
+ ["родной дом","2025","WITH TENSHI","single"],
+ ["грустные губы","2024","SINGLE","single"],
+ ["1,5","2024","SINGLE","single"],
+ ["подиум","2024","COLLABORATION","single"],
+ ["sad amber perfume","2024","SINGLE","single"],
+ ["sadisfaction","2024","SINGLE","single"],
+ ["high iq money","2023","SINGLE","single"],
+ ["слезы сатоши","2023","SINGLE","single"]
+];
+
+// Official Apple Music release pages. Artwork is retrieved from Apple's public catalog.
+const releaseCatalog={
+ "CRISIS MANAGEMENT":{id:"6814947083",url:"https://music.apple.com/us/album/crisis-management/6814947083"},
+ "sv moscow":{id:"1857971406",url:"https://music.apple.com/us/album/sv-moscow-single/1857971406"},
+ "Lee McQueen":{id:"1811684578",url:"https://music.apple.com/us/album/lee-mcqueen-single/1811684578"},
+ "родной дом":{id:"1793124415",url:"https://music.apple.com/us/album/%D1%80%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9-%D0%B4%D0%BE%D0%BC-feat-%D0%BA%D0%BE%D1%80%D0%BE%D0%BB%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9-xvii-single/1793124415"},
+ "грустные губы":{id:"1779037201",url:"https://music.apple.com/us/album/%D0%B3%D1%80%D1%83%D1%81%D1%82%D0%BD%D1%8B%D0%B5-%D0%B3%D1%83%D0%B1%D1%8B-single/1779037201"},
+ "1,5":{id:"1772715009",url:"https://music.apple.com/us/album/1-5-single/1772715009"},
+ "подиум":{id:"6775552027",url:"https://music.apple.com/us/album/%D0%BF%D0%BE%D0%B4%D0%B8%D1%83%D0%BC-single/6775552027"},
+ "sad amber perfume":{id:"1730746014",url:"https://music.apple.com/us/album/sad-amber-perfume-single/1730746014"},
+ "sadisfaction":{id:"1727825944",url:"https://music.apple.com/us/album/sadisfaction-single/1727825944"},
+ "high iq money":{id:"1715998506",url:"https://music.apple.com/us/album/high-iq-money-single/1715998506"},
+ "слезы сатоши":{id:"1704242905",url:"https://music.apple.com/us/album/%D1%81%D0%BB%D0%B5%D0%B7%D1%8B-%D1%81%D0%B0%D1%82%D0%BE%D1%88%D0%B8-single/1704242905"},
+ "de jure":{id:"6809885235",url:"https://music.apple.com/us/album/de-jure-single/6809885235"}
+};
+function getReleaseArtwork(id){
+ return new Promise(resolve=>{
+  const callbackName=`cover_${id}_${Math.random().toString(36).slice(2)}`;
+  const script=document.createElement("script");
+  let done=false;
+  const finish=url=>{if(done)return;done=true;clearTimeout(timer);delete window[callbackName];script.remove();resolve(url||"");};
+  const timer=setTimeout(()=>finish(""),12000);
+  window[callbackName]=data=>{
+   const url=data?.results?.find(item=>item.wrapperType==="collection")?.artworkUrl100;
+   finish(url?url.replace("100x100bb","600x600bb"):"");
+  };
+  script.onerror=()=>finish("");
+  script.src=`https://itunes.apple.com/lookup?id=${encodeURIComponent(id)}&entity=album&callback=${callbackName}`;
+  document.head.appendChild(script);
+ });
+}
+
+const list=document.getElementById("trackList");
+const search=document.getElementById("search");
+let activeFilter="all";
+
+function renderTracks(){
+ const q=search.value.toLowerCase().trim();
+ const result=tracks.filter(t=>
+  (activeFilter==="all"||t[3]===activeFilter)&&
+  (t[0].toLowerCase().includes(q)||t[1].toLowerCase().includes(q))
+ );
+ list.innerHTML=result.map((t,i)=>`
+  <div class="track">
+   <span class="track-num">${String(i+1).padStart(2,"0")}</span>
+   <div><div class="track-name">${t[0]}</div>
+   <div class="track-album">${t[1]} · ${t[2]}</div></div>
+   <span class="track-plays">—</span>
+   <button class="track-open" data-title="${t[0]}" aria-label="Открыть ${t[0]}">↗</button>
+  </div>`).join("")||'<p class="notice">Ничего не найдено.</p>';
+
+ list.querySelectorAll(".track-open").forEach(button=>{
+  button.addEventListener("click",()=>{
+   document.getElementById("playerTitle").textContent=button.dataset.title;
+   document.getElementById("playerSub").textContent="Открываем официальный каталог";
+   window.open(tUrl(button.dataset.title),"_blank","noopener");
+  });
+ });
+}
+function tUrl(name){
+ const albumTrack=tracks.find(t=>t[0]===name&&t[3]==="album");
+ return albumTrack?albumUrl:artistUrl;
+}
+
+document.querySelectorAll(".filter").forEach(button=>{
+ button.addEventListener("click",()=>{
+  document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));
+  button.classList.add("active");
+  activeFilter=button.dataset.filter;
+  renderTracks();
+ });
+});
+search.addEventListener("input",renderTracks);
+
+document.getElementById("releaseGrid").innerHTML=releases.map((r,i)=>`
+ <a class="release" href="${releaseCatalog[r[0]]?.url||artistUrl}" target="_blank" rel="noopener">
+  <div class="release-art"><span>${r[0]}</span></div>
+  <h3>${r[0]}</h3><p>${r[1]} · ${r[2]}</p>
+  <small>OPEN RELEASE ↗</small>
+ </a>
+`).join("");
+document.querySelectorAll(".release").forEach(async card=>{
+ const title=card.querySelector("h3")?.textContent?.trim();
+ const release=releaseCatalog[title];
+ if(!release)return;
+ const imageUrl=await getReleaseArtwork(release.id);
+ if(!imageUrl)return;
+ const img=document.createElement("img");
+ img.src=imageUrl;img.alt=`Оригинальная обложка: ${title}`;img.loading="lazy";img.decoding="async";
+ img.addEventListener("load",()=>card.querySelector(".release-art")?.classList.add("has-cover"),{once:true});
+ img.addEventListener("error",()=>img.remove(),{once:true});
+ card.querySelector(".release-art")?.prepend(img);
+});
+
+document.getElementById("playerButton").addEventListener("click",()=>{
+ window.open(artistUrl,"_blank","noopener");
+});
+
+const menu=document.getElementById("nav");
+document.getElementById("menuBtn").addEventListener("click",()=>{
+ menu.classList.toggle("open");
+});
+menu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>menu.classList.remove("open")));
+
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{
+  if(entry.isIntersecting){
+   entry.target.classList.add("visible");
+   observer.unobserve(entry.target);
+  }
+ });
+},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+renderTracks();
+</script>
+</body>
+</html>
